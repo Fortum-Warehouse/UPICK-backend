@@ -21,6 +21,9 @@ const itemSchema = new mongoose.Schema({
   material: {
     type: String
   },
+  category: {
+    type: String
+  },
   location: {
     type: String,
     required: true
@@ -29,3 +32,5 @@ const itemSchema = new mongoose.Schema({
     type: Number
   }
 })
+
+module.exports = mongoose.model('Item', itemSchema)

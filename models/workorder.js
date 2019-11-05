@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const Item = mongoose.model('Item')
+
 const workorderSchema = new mongoose.Schema({
   id: {
     type: String,
@@ -11,7 +13,10 @@ const workorderSchema = new mongoose.Schema({
     default: Date.now
   },
   items: {
-    type: [ItemSchema],
+    type: [Item],
+    required: true,
     default: undefined
   }
 })
+
+module.exports = mongoose.model('Workorder', workorderSchema)
