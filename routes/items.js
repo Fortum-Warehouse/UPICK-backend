@@ -12,11 +12,22 @@ router.get('/', async (req, res) => {
   }
 })
 
-// Getting one item
-router.get('/:id', (req, res) => {
+// Get one item
+router.get('/:id', getItem, (req, res) => {
+  res.json(res.item)
 })
 
-// Creating one item
+// Delete one item
+router.delete('/:id', getItem, async (req, res) => {
+  try {
+    await res.item.remove()
+    res.json({ message: 'Item deleted' })
+  } catch(err) {
+    res.status(500).json({ message: err.message })
+  }
+})
+
+// Create one item
 router.post('/', async (req, res) => {
 
     const item = new Item({
@@ -39,5 +50,21 @@ router.post('/', async (req, res) => {
     }
 
 })
+
+
+// Helper function
+async function getItem(req, res, next) {
+  try {
+    item = await Item.findById(req.params.id)
+    if (item == null) {
+      return res.status(404).json({ message: 'Cant find item'})
+    }
+  } catch(err){
+    return res.status(500).json({ message: err.message })
+  }
+
+  res.item = item
+  next()
+}
 
 module.exports = router
