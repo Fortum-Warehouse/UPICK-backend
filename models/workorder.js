@@ -15,7 +15,7 @@ const workorderSchema = new mongoose.Schema({
   items: [
     {
       item: {
-        type: Item,
+        type: {mongoose.Schema.Types.ObjectId, ref: 'Item'},
         required: true,
         default: undefined
       },
