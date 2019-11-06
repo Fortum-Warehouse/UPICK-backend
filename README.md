@@ -43,6 +43,12 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
 ---
 
+## Install
+
+    $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
+    $ cd PROJECT_TITLE
+    $ npm install
+
 ## Configure app
 
 You will need to create a .env file to the root of your project.
