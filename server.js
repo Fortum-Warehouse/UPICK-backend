@@ -13,4 +13,7 @@ app.use(express.json())
 const workordersRouter = require('./routes/workorders')
 app.use('/workorders', workordersRouter)
 
+const itemsRouter = require('./routes/items')
+app.use('/items', itemsRouter)
+
 app.listen(3005, () => console.log('server started'))

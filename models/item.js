@@ -12,7 +12,7 @@ const itemSchema = new mongoose.Schema({
   pn: {
     type: String
   },
-  length: {
+  itemLength: {
     type: Number
   },
   unit: {

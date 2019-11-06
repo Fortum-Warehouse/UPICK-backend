@@ -22,3 +22,15 @@ db.items.insertMany([
     location: "1-2-1",
     available: 2 },
 ]);
+
+{ 
+  "id": "10001",
+   "name": "O-ring kit, METSO",
+   "pn": "P/N 9695003",
+   "itemLength": "various",
+   "unit": "pcs",
+   "material": "Viton,NBR",
+   "category": "Parts",
+   "location": "1-1-1",
+   "available": 4 
+}
