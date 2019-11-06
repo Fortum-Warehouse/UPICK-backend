@@ -47,7 +47,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
     $ git clone https://github.com/YOUR_USERNAME/PROJECT_TITLE
     $ cd PROJECT_TITLE
-    $ yarn install
+    $ npm install
 
 ## Configure app
 

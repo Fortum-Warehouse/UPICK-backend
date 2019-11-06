@@ -97,4 +97,10 @@ public/
 # DynamoDB Local files
 .dynamodb/
 
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
 # End of https://www.gitignore.io/api/node,dotenv
