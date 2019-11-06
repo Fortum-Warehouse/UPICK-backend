@@ -12,11 +12,19 @@ const workorderSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
-  items: {
-    type: [Item],
-    required: true,
-    default: undefined
-  }
+  items: [
+    {
+      item: {
+        type: Item,
+        required: true,
+        default: undefined
+      },
+      qty: {
+        type: Number,
+        required: true
+      }
+    }
+  ]
 })
 
 module.exports = mongoose.model('Workorder', workorderSchema)
