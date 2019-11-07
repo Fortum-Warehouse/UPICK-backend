@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
 // Helper function
 async function getItem(req, res, next) {
   try {
-    item = await Item.findById(req.params.id)
+    item = await Item.find({id: req.params.id})
     if (item == null) {
       return res.status(404).json({ message: 'Cant find item'})
     }
