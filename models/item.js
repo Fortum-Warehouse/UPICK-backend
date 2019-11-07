@@ -21,6 +21,16 @@ const itemSchema = new mongoose.Schema({
   material: {
     type: String
   },
+  hazards: [
+    {
+      name: {
+        type: String
+      },
+      pic: {
+        type: String
+      }
+    }
+  ],
   category: {
     type: String
   },
