@@ -1,7 +1,5 @@
 const mongoose = require('mongoose')
 
-const Item = mongoose.model('Item')
-
 const workorderSchema = new mongoose.Schema({
   id: {
     type: String,
@@ -15,7 +13,8 @@ const workorderSchema = new mongoose.Schema({
   items: [
     {
       item: {
-        type: {mongoose.Schema.Types.ObjectId, ref: 'Item'},
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Item',
         required: true,
         default: undefined
       },
