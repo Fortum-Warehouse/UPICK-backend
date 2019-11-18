@@ -40,6 +40,9 @@ const itemSchema = new mongoose.Schema({
   },
   available: {
     type: Number
+  },
+  url: {
+    type:String
   }
 })
 

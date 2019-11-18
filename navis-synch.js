@@ -1,5 +1,6 @@
 //Script that pushes item db data to navvis poi description box
 //ctrl+f const template to change the representation
+//also adds poi urls to items
 
 require('dotenv').config()
 const item = require('./models/item')
@@ -60,7 +61,7 @@ function updatePOIS(pois, data) {
   const updateData = pois.map((poiData) => {
     const i = data.find((element)=> element.location == poiData.titles.en);
     const template = `<p>${i}</p>`
-    const poiDataUpdated =poiData
+    const poiDataUpdated = poiData
     poiDataUpdated.descriptions.en = template
     return poiDataUpdated
   })
@@ -77,6 +78,10 @@ function updatePOIS(pois, data) {
 request(options, function (error, response, body) {
   if (error) return console.log(error);
   console.log(body);
+  data.forEach(element => {
+    const poiID = pois.find((poi)=> element.location == poi.titles.en).id;
+    element.url = process.env.NAVIS_URL + `?poi=${poiID}`
+  });
+  item.create(data);
 });
-
 }
