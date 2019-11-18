@@ -16,5 +16,5 @@ app.use('/workorders', workordersRouter)
 const itemsRouter = require('./routes/items')
 app.use('/items', itemsRouter)
 
-
-app.listen(3005, () => console.log('server started'))
+const port = process.env.PORT || 3005
+app.listen(port, () => console.log('server started'))
