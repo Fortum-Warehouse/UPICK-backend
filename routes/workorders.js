@@ -6,7 +6,6 @@ const router = express.Router()
 // Get all workorders
 router.get('/', (req, res) => {
   workorder.find((err, wo) => {
-    console.log(wo);
     res.send(wo);
   })
 })
@@ -14,7 +13,6 @@ router.get('/', (req, res) => {
 // Get one workorder by id
 router.get('/:id', (req, res) => {
   workorder.find({ id: req.params.id }).populate('items.item').exec((err, result) => {
-    console.log(res);
     res.send(result)
   })
 })
