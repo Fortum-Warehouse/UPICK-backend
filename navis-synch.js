@@ -59,7 +59,21 @@ function filterPOIS(pois) {
 function updatePOIS(pois, data) {
   const updateData = pois.map((poiData) => {
     const i = data.find((element)=> element.location == poiData.titles.en);
-    const template = `<p>${i}</p>`
+    const template = `<!DOCTYPE html>
+    <html>
+    <head>
+    </head>
+    <body>
+        <h4>${i.category}</h4>
+        <h3> ${i.name}</h3>
+        <h5>stock</h5>
+        <h6>${i.available}</h6>
+        <h5>Material</h5>
+        <h6>${i.material}</h6>
+        <h5>id</h5>
+        <h6>${i.id}</h6>
+    </body>
+    </html>`
     const poiDataUpdated =poiData
     poiDataUpdated.descriptions.en = template
     return poiDataUpdated
